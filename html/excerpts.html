@@ -1,0 +1,703 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5</title>
+    <style>
+        body
+        {
+            font: 12pt Cambria;
+            margin: 100px;
+        }
+        
+        h1
+        {
+            font-size: 16pt;
+        }
+        
+        pre
+        {
+            font-family: Consolas;
+            color: #036;
+        }
+        
+        .wrong
+        {
+            color: #603;
+        }
+        
+        section
+        {
+            margin: 3em 0;
+        }
+    </style>
+</head>
+<body>
+<h1 style="font-size: 2em; text-align: center; border-bottom: 1px solid #000; margin-bottom: 1em">Excerpts from HTML5 draft</h1>
+
+
+    <p>
+        If the title attribute's value contains U+000A LINE FEED (LF) characters, the content
+        is split into multiple lines. Each U+000A LINE FEED (LF) character represents a
+        line break.</p>
+    <pre>
+&lt;p> Announcer: Number 16: The &lt;i>hand&lt;/i>.
+&lt;p> Interviewer: Good evening. I have with me in the studio tonight
+Mr Norman St John Polevaulter, who for the past few years has been
+contradicting people. Mr Polevaulter, why &lt;em>do&lt;/em> you
+contradict people?
+&lt;p> Norman: I don't. &lt;sup>&lt;a href="#fn1" id="r1">[1]&lt;/a>&lt;/sup>
+&lt;p> Interviewer: You told me you did!
+...
+&lt;section>
+ &lt;p id="fn1">&lt;a href="#r1">[1]&lt;/a> This is, naturally, a lie,
+ but paradoxically if it were true he could not say so without
+ contradicting the interviewer and thus making it false.&lt;/p>
+&lt;/section>
+</pre>
+    <section>
+<h1>
+    Sections</h1>
+
+<p>
+    The <b>section</b> element represents a generic section of a document or application.
+    A section, in this context, is a thematic grouping of content, typically with a
+    heading.</p>
+<ul>
+    <li>Examples of sections would be chapters, the various tabbed pages in a tabbed dialog
+        box, or the numbered sections of a thesis. A Web site's home page could be split
+        into sections for an introduction, news items, and contact information.</li>
+    <li>Authors are encouraged to use the article element instead of the section element
+        when it would make sense to syndicate the contents of the element.</li>
+</ul>
+
+<p>
+    The <b>nav</b> element represents a section of a page that links to other pages
+    or to parts within the page: a section with navigation links.</p>
+<ul>
+    <li>Not all groups of links on a page need to be in a nav element — the element is primarily
+        intended for sections that consist of major navigation blocks. In particular, it
+        is common for footers to have a short list of links to various pages of a site,
+        such as the terms of service, the home page, and a copyright page. The footer element
+        alone is sufficient for such cases; while a nav element can be used in such cases,
+        it is usually unnecessary.</li></ul>
+
+<p>
+    The <b>article</b> element represents a self-contained composition in a document,
+    page, application, or site and that is, in principle, independently distributable
+    or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper
+    article, a blog entry, a user-submitted comment, an interactive widget or gadget,
+    or any other independent item of content.</p>
+<ul>
+    <li>Author information associated with an article element (q.v. the address element)
+        does not apply to nested article elements.</li></ul>
+
+<p>
+    The <b>aside</b> element represents a section of a page that consists of content
+    that is tangentially related to the content around the aside element, and which
+    could be considered separate from that content. Such sections are often represented
+    as sidebars in printed typography.</p>
+<ul>
+    <li>The element can be used for typographical effects like pull quotes or sidebars,
+        for advertising, for groups of nav elements, and for other content that is considered
+        separate from the main content of the page.</li></ul>
+
+<p>
+    The <b>hgroup</b> element represents the heading of a section. The element is used
+    to group a set of h1–h6 elements when the heading has multiple levels, such as subheadings,
+    alternative titles, or taglines.</p>
+<ul>
+    <li>For the purposes of document summaries, outlines, and the like, the text of hgroup
+        elements is defined to be the text of the highest ranked h1–h6 element descendant
+        of the hgroup element, if there are any such elements, and the first such element
+        if there are multiple elements with that rank. If there are no such elements, then
+        the text of the hgroup element is the empty string.</li></ul>
+
+<p>
+    The <b>header</b> element represents a group of introductory or navigational aids.</p>
+<ul>
+    <li>A header element is intended to usually contain the section's heading (an h1–h6
+        element or an hgroup element), but this is not required. The header element can
+        also be used to wrap a section's table of contents, a search form, or any relevant
+        logos.</li></ul>
+
+<p>
+    The <b>footer</b> element represents a footer for its nearest ancestor sectioning
+    content or sectioning root element. A footer typically contains information about
+    its section such as who wrote it, links to related documents, copyright data, and
+    the like.</p>
+<ul>
+    <li>When the footer element contains entire sections, they represent appendices, indexes,
+        long colophons, verbose license agreements, and other such content.</li>
+    <li>Contact information for the author or editor of a section belongs in an address
+        element, possibly itself inside a footer.</li>
+</ul>
+
+<p>
+    The <b>address</b> element represents the contact information for its nearest article
+    or body element ancestor. If that is the body element, then the contact information
+    applies to the document as a whole.</p>
+<ul>
+    <li>The address element must not be used to represent arbitrary addresses (e.g. postal
+        addresses), unless those addresses are in fact the relevant contact information.
+        (The p element is the appropriate element for marking up postal addresses in general.)</li>
+    <li>The address element must not contain information other than contact information.
+        <pre class="wrong">&lt;ADDRESS&gt;Last Modified: 1999/12/24 23:37:50&lt;/ADDRESS&gt;</pre>
+    </li>
+</ul>
+contact information must be in address element
+The address element represents the contact information for its nearest article or body element ancestor.
+</section>
+    <section>
+        <h1>
+            Grouping content</h1>
+        <p>
+            The <b>hr</b> element represents a paragraph-level thematic break, e.g. a scene
+            change in a story, or a transition to another topic within a section of a reference
+            book.</p>
+        <p>
+            The <b>blockquote</b> element represents a section that is quoted from another source.</p>
+        <ul>
+            <li>
+                <pre>
+&lt;p>His next piece was the aptly named &lt;cite&gt;Sonnet 130&lt;/cite&gt;:&lt;/p&gt;
+&lt;blockquote cite="http://quotes.example.org/s/sonnet130.html">
+  &lt;p&gt;My mistress' eyes are nothing like the sun,&lt;br&gt;
+  Coral is far more red, than her lips red,&lt;br&gt;
+  ...
+</pre>
+            </li>
+        </ul>
+        <p>
+            The <b>dl</b> element represents an association list consisting of zero or more
+            name-value groups (a description list). Each group must consist of one or more names
+            (<b>dt</b> elements) followed by one or more values (<b>dd</b> elements). Within
+            a single dl element, there should not be more than one dt element for each name.</p>
+        <ul>
+            <li>Name-value groups may be terms and definitions, metadata topics and values, questions
+                and answers, or any other groups of name-value data.</li>
+            <li>The dt element itself, when used in a dl element, does not indicate that its contents
+                are a term being defined, but this can be indicated using the dfn element.</li>
+            <li>
+                <pre>
+&lt;dl&gt;
+ &lt;dt lang="en-US"&gt; &lt;dfn&gt;color&lt;/dfn&gt; &lt;/dt&gt;
+ &lt;dt lang="en-GB"&gt; &lt;dfn&gt;colour&lt;/dfn&gt; &lt;/dt&gt;
+ &lt;dd&gt; A sensation which (in humans) derives from the ability of
+ the fine structure of the eye to distinguish three differently
+ filtered analyses of a view. &lt;/dd&gt;
+&lt;/dl&gt;
+ </pre>
+            </li>
+            <li>
+                <pre>
+&lt;dl&gt;
+ &lt;dt&gt; Last modified time &lt;/dt&gt;
+ &lt;dd&gt; 2004-12-23T23:33Z &lt;/dd&gt;
+ &lt;dt&gt; Recommended update interval &lt;/dt&gt;
+ &lt;dd&gt; 60s &lt;/dd&gt;
+ &lt;dt&gt; Authors &lt;/dt&gt;
+ &lt;dt&gt; Editors &lt;/dt&gt;
+ &lt;dd&gt; Robert Rothman &lt;/dd&gt;
+ &lt;dd&gt; Daniel Jackson &lt;/dd&gt;
+&lt;/dl&gt;
+ </pre>
+            </li>
+            <li>
+                <pre>
+&lt;dl&gt;
+ &lt;dt&gt;&lt;dfn&gt;happiness&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dd class="pronunciation"&gt;/'hæ p. nes/&lt;/dd&gt;
+ &lt;dd class="part-of-speech"&gt;&lt;i&gt;&lt;abbr&gt;n.&lt;/abbr&gt;&lt;/i&gt;&lt;/dd&gt;
+ &lt;dd&gt;The state of being happy.&lt;/dd&gt;
+ &lt;dd&gt;Good fortune; success. &lt;q&gt;Oh &lt;b&gt;happiness&lt;/b&gt;! It worked!&lt;/q&gt;&lt;/dd&gt;
+ &lt;dt&gt;&lt;dfn&gt;rejoice&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dd class="pronunciation"&gt;/ri jois'/&lt;/dd&gt;
+ &lt;dd&gt;&lt;i class="part-of-speech"&gt;&lt;abbr&gt;v.intr.&lt;/abbr&gt;&lt;/i&gt; To be delighted oneself.&lt;/dd&gt;
+ &lt;dd&gt;&lt;i class="part-of-speech"&gt;&lt;abbr&gt;v.tr.&lt;/abbr&gt;&lt;/i&gt; To cause one to be delighted.&lt;/dd&gt;
+&lt;/dl&gt;
+ </pre>
+            </li>
+        </ul>
+        <p>
+            The <b>figure</b> element represents some flow content, optionally with a caption,
+            that is self-contained and is typically referenced as a single unit from the main
+            flow of the document. The <b>figcaption</b> element represents a caption or legend
+            for the rest of the contents of the figcaption element's parent figure element,
+            if any.
+        </p>
+    </section>
+    <section>
+        <h1>
+            Text-level semantics</h1>
+        <section>
+            <p>
+                The <b>dfn</b> element represents the defining instance of a term. The paragraph,
+                description list group, or section that is the nearest ancestor of the dfn element
+                must also contain the definition(s) for the term given by the dfn element.</p>
+            <ul>
+                <li>Defining term: If the dfn element has a title attribute, then the exact value of
+                    that attribute is the term being defined. Otherwise, if it contains exactly one
+                    element child node and no child text nodes, and that child element is an abbr element
+                    with a title attribute, then the exact value of that attribute is the term being
+                    defined. Otherwise, it is the exact textContent of the dfn element that gives the
+                    term being defined.</li></ul>
+            <p>
+                The <b>abbr</b> element represents an abbreviation or acronym, optionally with its
+                expansion. The title attribute may be used to provide an expansion of the abbreviation.
+                The attribute, if specified, must contain an expansion of the abbreviation, and
+                nothing else.</p>
+        </section>
+        <section>
+            <p>
+                The <b>cite</b> element represents the title of a work (e.g. a book, a paper, an
+                essay, a poem, a score, a song, a script, a film, a TV show, a game, a sculpture,
+                a painting, a theatre production, a play, an opera, a musical, an exhibition, a
+                legal case report, etc). This can be a work that is being quoted or referenced in
+                detail (i.e. a citation), or it can just be a work that is mentioned in passing.</p>
+            <ul>
+                <li>A person's name is not the title of a work — even if people call that person a piece
+                    of work — and the element must therefore not be used to mark up people's names.
+                    (In some cases, the b element might be appropriate for names; e.g. in a gossip article
+                    where the names of famous people are keywords rendered with a different style to
+                    draw attention to them. In other cases, if an element is really needed, the span
+                    element can be used.)</li><li>
+                        <pre>
+&lt;p&gt;My favorite book is &lt;cite&gt;The Reality Dysfunction&lt;/cite&gt; by
+Peter F. Hamilton. My favorite comic is &lt;cite&gt;Pearls Before
+Swine&lt;/cite&gt; by Stephan Pastis. My favorite track is &lt;cite&gt;Jive
+Samba&lt;/cite&gt; by the Cannonball Adderley Sextet.&lt;/p&gt;
+                </pre>
+                    </li>
+                <li>
+                    <pre class="wrong">
+&lt;p&gt;According to &lt;cite&gt;the Wikipedia article on HTML&lt;/cite&gt;, as it
+stood in mid-February 2008, leaving attribute values unquoted is
+unsafe. This is obviously an over-simplification.&lt;/p&gt;
+                </pre>
+                    <pre>
+&lt;p>According to the Wikipedia article &lt;cite>HTML&lt;/cite>, as it
+stood in mid-February 2008, leaving attribute values unquoted is
+unsafe. This is obviously an over-simplification.&lt;/p>                </pre>
+                </li>
+                <li>
+                    <pre>
+&lt;p&gt;&lt;cite&gt;Universal Declaration of Human Rights&lt;/cite&gt;, United Nations,
+December 1948. Adopted by General Assembly resolution 217 A (III).&lt;/p&gt;
+                </pre>
+                </li>
+            </ul>
+            <p>
+                The <b>q</b> element represents some phrasing content quoted from another source.</p>
+            <ul>
+                <li>Quotation punctuation (such as quotation marks) that is quoting the contents of
+                    the element must not appear immediately before, after, or inside q elements; they
+                    will be inserted into the rendering by the user agent.</li><li>
+                        <pre>
+&lt;p&gt;The W3C page &lt;cite&gt;About W3C&lt;/cite&gt; says the W3C's
+mission is &lt;q cite="http://www.w3.org/Consortium/"&gt;To lead the
+World Wide Web to its full potential by developing protocols and
+guidelines that ensure long-term growth for the Web&lt;/q&gt;. I
+disagree with this mission.&lt;/p&gt;
+                </pre>
+                    </li>
+            </ul>
+        </section>
+        <section>
+            <p>
+                The <b>em</b> element represents stress emphasis of its contents.</p>
+            <p>
+                The <b>strong</b> element represents strong importance for its contents.</p>
+            <p>
+                The <b>i</b> element represents a span of text in an alternate voice or mood, or
+                otherwise offset from the normal prose in a manner indicating a different quality
+                of text, such as a taxonomic designation, a technical term, an idiomatic phrase
+                from another language, a thought, or a ship name in Western texts.</p>
+            <p>
+                The <b>b</b> element represents a span of text to which attention is being drawn
+                for utilitarian purposes without conveying any extra importance and with no implication
+                of an alternate voice or mood, such as key words in a document abstract, product
+                names in a review, actionable words in interactive text-driven software, or an article
+                lede.</p>
+            <p>
+                The <b>u</b> element represents a span of text with an unarticulated, though explicitly
+                rendered, non-textual annotation, such as labeling the text as being a proper name
+                in Chinese text (a Chinese proper name mark), or labeling the text as being misspelt.</p>
+            <ul>
+                <li>In most cases, another element is likely to be more appropriate: for marking stress
+                    emphasis, the em element should be used; for marking key words or phrases either
+                    the b element or the mark element should be used, depending on the context; for
+                    marking book titles, the cite element should be used; for labeling text with explicit
+                    textual annotations, the ruby element should be used; for labeling ship names in
+                    Western texts, the i element should be used.</li>
+            </ul>
+            <p>
+                The <b>s</b> element represents contents that are no longer accurate or no longer
+                relevant.</p>
+            <ul>
+                <li>The s element is not appropriate when indicating document edits; to mark a span
+                    of text as having been removed from a document, use the del element.</li><li>
+                        <pre>
+&lt;p&gt;Buy our Iced Tea and Lemonade!&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;Recommended retail price: $3.99 per bottle&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now selling for just $2.99 a bottle!&lt;/strong&gt;&lt;/p&gt;
+</pre>
+                    </li>
+            </ul>
+            <p>
+                The <b>small</b> element represents side comments such as small print.</p>
+            <ul>
+                <li>Small print typically features disclaimers, caveats, legal restrictions, or copyrights.
+                    Small print is also sometimes used for attribution, or for satisfying licensing
+                    requirements.</li><li>The small element does not "de-emphasize" or lower the importance
+                        of text emphasized by the em element or marked as important with the strong element.
+                        To mark text as not emphasized or important, simply do not mark it up with the em
+                        or strong elements respectively.</li></ul>
+            <p>
+                The <b>mark</b> element represents a run of text in one document marked or highlighted
+                for reference purposes, due to its relevance in another context. When used in a
+                quotation or other block of text referred to from the prose, it indicates a highlight
+                that was not originally present but which has been added to bring the reader's attention
+                to a part of the text that might not have been considered important by the original
+                author when the block was originally written, but which is now under previously
+                unexpected scrutiny. When used in the main prose of a document, it indicates a part
+                of the document that has been highlighted due to its likely relevance to the user's
+                current activity.</p>
+            <ul>
+                <li>This example shows how the mark element can be used to bring attention to a particular
+                    part of a quotation:<pre>
+&lt;p lang="en-US"&gt;Consider the following quote:&lt;/p&gt;
+&lt;blockquote lang="en-GB"&gt;
+ &lt;p&gt;Look around and you will find, no-one's really
+ &lt;mark&gt;colour&lt;/mark&gt; blind.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p lang="en-US"&gt;As we can tell from the &lt;em&gt;spelling&lt;/em&gt; of the word,
+the person writing this quote is clearly not American.&lt;/p&gt;
+</pre>
+                    (If the goal was to mark the element as misspelt, however, the u element, possibly
+                    with a class, would be more appropriate.)</li>
+                <li>Another example of the mark element is highlighting parts of a document that are
+                    matching some search string. If someone looked at a document, and the server knew
+                    that the user was searching for the word "kitten", then the server might return
+                    the document with one paragraph modified as follows:<pre>
+&lt;p&gt;I also have some &lt;mark&gt;kitten&lt;/mark&gt;s who are visiting me
+these days. They're really cute. I think they like my garden! Maybe I
+should adopt a &lt;mark&gt;kitten&lt;/mark&gt;.&lt;/p&gt;
+</pre>
+                </li>
+                <li>In the following snippet, a paragraph of text refers to a specific part of a code
+                    fragment.<pre>
+&lt;p&gt;The highlighted part below is where the error lies:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var i: Integer;
+begin
+   i := &lt;mark&gt;1.1&lt;/mark&gt;;
+end.&lt;/code&gt;&lt;/pre&gt;
+</pre>
+                    This is separate from syntax highlighting.</li></ul>
+        </section>
+        <section>
+            <p>
+                The <b>code</b> element represents a fragment of computer code. This could be an
+                XML element name, a filename, a computer program, or any other string that a computer
+                would recognize.</p>
+            <ul>
+                <li>Although there is no formal way to indicate the language of computer code being
+                    marked up, authors who wish to mark code elements with the language used, e.g. so
+                    that syntax highlighting scripts can use the right rules, may do so by adding a
+                    class prefixed with "language-" to the element.<pre>
+&lt;pre&gt;&lt;code class="language-pascal"&gt;var i: Integer;
+begin
+   i := 1;
+end.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;code&lt;/code&gt; element represents a fragment of computer
+code.&lt;/p&gt;
+        </pre>
+                </li>
+            </ul>
+            <p>
+                The <b>samp</b> element represents (sample) output from a program or computing system.</p>
+            <ul>
+                <li>
+                    <pre>
+&lt;p&gt;The computer said &lt;samp&gt;Too much cheese in tray
+two&lt;/samp&gt; but I didn't know what that meant.&lt;/p&gt;
+        </pre>
+                </li>
+                <li>
+                    <pre>
+&lt;pre&gt;&lt;samp&gt;&lt;span class="prompt"&gt;jdoe@mowmow:~$&lt;/span&gt; &lt;kbd&gt;ssh demo.example.com&lt;/kbd&gt;
+Last login: Tue Apr 12 09:10:17 2005 from mowmow.example.com on pts/1
+Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SMP Tue Feb 1 11:22:36 PST 2005 i686 unknown
+
+&lt;span class="prompt"&gt;jdoe@demo:~$&lt;/span&gt; &lt;span class="cursor"&gt;_&lt;/span&gt;&lt;/samp&gt;&lt;/pre&gt;
+        </pre>
+                </li>
+            </ul>
+            <p>
+                The <b>kbd</b> element represents user input (typically keyboard input, although
+                it may also be used to represent other input, such as voice commands).</p>
+            <ul>
+                <li>When the kbd element is nested inside a samp element, it represents the input as
+                    it was echoed by the system.</li>
+                <li>When the kbd element contains a samp element, it represents input based on system
+                    output, for example invoking a menu item.<pre>
+&lt;p&gt;To make George eat an apple, select
+    &lt;kbd&gt;&lt;kbd&gt;&lt;samp&gt;File&lt;/samp&gt;&lt;/kbd&gt;|&lt;kbd&gt;&lt;samp&gt;Eat Apple...&lt;/samp&gt;&lt;/kbd&gt;&lt;/kbd&gt;
+&lt;/p&gt;
+        </pre>
+                    Such precision isn't necessary; the following is equally fine:<pre>
+&lt;p&gt;To make George eat an apple, select &lt;kbd&gt;File | Eat Apple...&lt;/kbd&gt;&lt;/p&gt;
+        </pre>
+                </li>
+                <li>When the kbd element is nested inside another kbd element, it represents an actual
+                    key or other single unit of input as appropriate for the input mechanism.<pre>
+&lt;p&gt;To make George eat an apple, press &lt;kbd&gt;&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;F3&lt;/kbd&gt;&lt;/kbd&gt;&lt;/p&gt;
+        </pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <p>
+                The <b>var</b> element represents a variable. This could be an actual variable in
+                a mathematical expression or programming context, or it could just be a term used
+                as a placeholder in prose.</p>
+            <p>
+                The <b>sup</b> element represents a superscript and the <b>sub</b> element represents
+                a subscript.</p>
+            <ul>
+                <li>These elements must be used only to mark up typographical conventions with specific
+                    meanings, not for typographical presentation for presentation's sake. For example,
+                    it would be inappropriate for the sub and sup elements to be used in the name of
+                    the LaTeX document preparation system. In general, authors should use these elements
+                    only if the absence of those elements would change the meaning of the content.</li>
+                <li>Here, the sub element is used to represents the subscript that identifies the variable
+                    in a family of variables:<pre>
+&lt;p&gt;The coordinate of the &lt;var&gt;i&lt;/var&gt;th point is
+(&lt;var&gt;x&lt;sub&gt;&lt;var&gt;i&lt;/var&gt;&lt;/sub&gt;&lt;/var&gt;, &lt;var&gt;y&lt;sub&gt;&lt;var&gt;i&lt;/var&gt;&lt;/sub&gt;&lt;/var&gt;).
+For example, the 10th point has coordinate
+(&lt;var&gt;x&lt;sub&gt;10&lt;/sub&gt;&lt;/var&gt;, &lt;var&gt;y&lt;sub&gt;10&lt;/sub&gt;&lt;/var&gt;).&lt;/p&gt;
+                </pre>
+                </li>
+                <li>Mathematical expressions often use subscripts and superscripts. Authors are encouraged
+                    to use MathML for marking up mathematics, but authors may opt to use sub and sup
+                    if detailed mathematical markup is not desired.<pre>
+&lt;var&gt;E&lt;/var&gt;=&lt;var&gt;m&lt;/var&gt;&lt;var&gt;c&lt;/var&gt;&lt;sup&gt;2&lt;/sup&gt;
+f(&lt;var&gt;x&lt;/var&gt;, &lt;var&gt;n&lt;/var&gt;) = log&lt;sub&gt;4&lt;/sub&gt;&lt;var&gt;x&lt;/var&gt;&lt;sup&gt;&lt;var&gt;n&lt;/var&gt;&lt;/sup&gt;
+                </pre>
+                </li>
+            </ul>
+        </section>
+        <section><p>The <b>bdi</b> element represents a span of text that is to be isolated from its surroundings for the purposes of bidirectional text formatting.</p>
+        <ul><li>The dir global attribute defaults to auto on this element (it never inherits from the parent element like with other elements).</li><li>For the purposes of applying the bidirectional algorithm to the contents of a bdi element, user agents must treat the element as a paragraph-level container.
+
+For the purposes of applying the bidirectional algorithm to the paragraph-level container that a bdi element finds itself within, the bdi element must be treated like a U+FFFC OBJECT REPLACEMENT CHARACTER (in the same manner that an image or other inline object is handled).</li></ul>
+<p>The <b>bdo</b> element represents explicit text directionality formatting control for its children. It allows authors to override the Unicode bidirectional algorithm by explicitly specifying a direction override.</p>
+        <ul><li>Authors must specify the dir attribute on this element, with the value ltr to specify a left-to-right override and with the value rtl to specify a right-to-left override.</li></ul>
+        </section>
+        <section>
+        <p>The <b>br</b> element represents a line break.</p><ul><li>br elements must be used only for line breaks that are actually part of the content, as in poems or addresses.</li></ul>
+        <p>The <b>wbr</b> element represents a line break opportunity.</p><ul><li><pre>
+<p>So then he pointed at the tiger and screamed
+"there<wbr>is<wbr>no<wbr>way<wbr>you<wbr>are<wbr>ever<wbr>going<wbr>to<wbr>catch<wbr>me"!</p>
+        </pre></li></ul>
+        </section>
+    
+    <section>
+    <h1>Usage summary</h1>
+    <table><thead><tr><th>Element
+     </th><th>Purpose
+     </th><th>Example
+   </th></tr></thead><tbody><tr><td><code><a href="#the-a-element">a</a></code>
+     </td><td>Hyperlinks
+     </td><td><pre class="example">Visit my <strong>&lt;a href="drinks.html"&gt;drinks&lt;/a&gt;</strong> page.</pre>
+
+    </td></tr><tr><td><code><a href="#the-em-element">em</a></code>
+     </td><td>Stress emphasis
+     </td><td><pre class="example">I must say I <strong>&lt;em&gt;adore&lt;/em&gt;</strong> lemonade.</pre>
+
+    </td></tr><tr><td><code><a href="#the-strong-element">strong</a></code>
+     </td><td>Importance
+     </td><td><pre class="example">This tea is <strong>&lt;strong&gt;very hot&lt;/strong&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-small-element">small</a></code>
+     </td><td>Side comments
+     </td><td><pre class="example">These grapes are made into wine. <strong>&lt;small&gt;Alcohol is addictive.&lt;/small&gt;</strong></pre>
+
+    </td></tr><tr><td><code><a href="#the-s-element">s</a></code>
+     </td><td>Inaccurate text
+     </td><td><pre class="example">Price: <strong>&lt;s&gt;£4.50&lt;/s&gt;</strong> £2.00!</pre>
+
+    </td></tr><tr><td><code><a href="#the-cite-element">cite</a></code>
+     </td><td>Titles of works
+     </td><td><pre class="example">The case <strong>&lt;cite&gt;Hugo v. Danielle&lt;/cite&gt;</strong> is relevant here.</pre>
+
+    </td></tr><tr><td><code><a href="#the-q-element">q</a></code>
+     </td><td>Quotations
+     </td><td><pre class="example">The judge said <strong>&lt;q&gt;You can drink water from the fish tank&lt;/q&gt;</strong> but advised against it.</pre>
+
+    </td></tr><tr><td><code><a href="#the-dfn-element">dfn</a></code>
+     </td><td>Defining instance
+     </td><td><pre class="example">The term <strong>&lt;dfn&gt;organic food&lt;/dfn&gt;</strong> refers to food produced without synthetic chemicals.</pre>
+
+    </td></tr><tr><td><code><a href="#the-abbr-element">abbr</a></code>
+     </td><td>Abbreviations
+     </td><td><pre class="example">Organic food in Ireland is certified by the <strong>&lt;abbr title="Irish Organic Farmers and Growers Association"&gt;IOFGA&lt;/abbr&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-time-element">time</a></code>
+     </td><td>Date and/or time
+     </td><td><pre class="example">Published <strong>&lt;time&gt;2009-10-21&lt;/time&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-code-element">code</a></code>
+     </td><td>Computer code
+     </td><td><pre class="example">The <strong>&lt;code&gt;fruitdb&lt;/code&gt;</strong> program can be used for tracking fruit production.</pre>
+
+    </td></tr><tr><td><code><a href="#the-var-element">var</a></code>
+     </td><td>Variables
+     </td><td><pre class="example">If there are <strong>&lt;var&gt;n&lt;/var&gt;</strong> fruit in the bowl, at least <strong>&lt;var&gt;n&lt;/var&gt;</strong>÷2 will be ripe.</pre>
+
+    </td></tr><tr><td><code><a href="#the-samp-element">samp</a></code>
+     </td><td>Computer output
+     </td><td><pre class="example">The computer said <strong>&lt;samp&gt;Unknown error -3&lt;/samp&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-kbd-element">kbd</a></code>
+     </td><td>User input
+     </td><td><pre class="example">Hit <strong>&lt;kbd&gt;F1&lt;/kbd&gt;</strong> to continue.</pre>
+
+    </td></tr><tr><td><code><a href="#the-sub-and-sup-elements">sub</a></code>
+     </td><td>Subscripts
+     </td><td><pre class="example">Water is H<strong>&lt;sub&gt;2&lt;/sub&gt;</strong>O.</pre>
+
+    </td></tr><tr><td><code><a href="#the-sub-and-sup-elements">sup</a></code>
+     </td><td>Superscripts
+     </td><td><pre class="example">The Hydrogen in heavy water is usually <strong>&lt;sup&gt;2&lt;/sup&gt;</strong>H.</pre>
+
+    </td></tr><tr><td><code><a href="#the-i-element">i</a></code>
+     </td><td>Alternative voice
+     </td><td><pre class="example">Lemonade consists primarily of <strong>&lt;i&gt;Citrus limon&lt;/i&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-b-element">b</a></code>
+     </td><td>Keywords
+     </td><td><pre class="example">Take a <strong>&lt;b&gt;lemon&lt;/b&gt;</strong> and squeeze it with a <strong>&lt;b&gt;juicer&lt;/b&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-u-element">u</a></code>
+     </td><td>Annotations
+     </td><td><pre class="example">The mixture of apple juice and &lt;u class="spelling"&gt;eldeflower&lt;/u&gt; juice is very pleasant.</pre>
+
+    </td></tr><tr><td><code><a href="#the-mark-element">mark</a></code>
+     </td><td>Highlight
+     </td><td><pre class="example">Elderflower cordial, with one <strong>&lt;mark&gt;part&lt;/mark&gt;</strong> cordial to ten <strong>&lt;mark&gt;part&lt;/mark&gt;</strong>s water, stands a<strong>&lt;mark&gt;part&lt;/mark&gt;</strong> from the rest.</pre>
+
+    </td></tr><tr><td><code><a href="#the-ruby-element">ruby</a></code>, <code><a href="#the-rt-element">rt</a></code>, <code><a href="#the-rp-element">rp</a></code>
+     </td><td>Ruby annotations
+     </td><td><pre class="example"><strong>&lt;ruby&gt; OJ &lt;rp&gt;(&lt;rt&gt;Orange Juice&lt;rp&gt;)&lt;/ruby&gt;</strong></pre>
+
+    </td></tr><tr><td><code><a href="#the-bdi-element">bdi</a></code>
+     </td><td>Text directionality isolation
+     </td><td><pre class="example">The recommended restaurant is <strong>&lt;bdi lang=""&gt;My Juice Café (At The Beach)&lt;/bdi&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-bdo-element">bdo</a></code>
+     </td><td>Text directionality formatting
+     </td><td><pre class="example">The proposal is to write English, but in reverse order. "Juice" would become "<strong>&lt;bdo dir=rtl&gt;Juice&lt;/bdo&gt;</strong>"</pre>
+
+    </td></tr><tr><td><code><a href="#the-span-element">span</a></code>
+     </td><td>Other
+     </td><td><pre class="example">In French we call it <strong>&lt;span lang="fr"&gt;sirop de sureau&lt;/span&gt;</strong>.</pre>
+
+    </td></tr><tr><td><code><a href="#the-br-element">br</a></code>
+     </td><td>Line break
+     </td><td><pre class="example">Simply Orange Juice Company<strong>&lt;br&gt;</strong>Apopka, FL 32703<strong>&lt;br&gt;</strong>U.S.A.</pre>
+
+    </td></tr><tr><td><code><a href="#the-wbr-element">wbr</a></code>
+     </td><td>Line breaking opportunity
+     </td><td><pre class="example">www.simply<strong>&lt;wbr&gt;</strong>orange<strong>&lt;wbr&gt;</strong>juice.com</pre>
+
+  </td></tr></tbody></table>
+    </section>
+    </section>
+
+    <section>
+    <h1>HTML links</h1>
+    <table><thead><tr><th rowspan="2">Link type</th>
+     <th colspan="2">Effect on...</th>
+     <th rowspan="2">Brief description</th>
+    </tr><tr><th><code><a href="semantics.html#the-link-element">link</a></code></th>
+     <th><code><a href="text-level-semantics.html#the-a-element">a</a></code> and <code><a href="the-map-element.html#the-area-element">area</a></code></th>
+    </tr></thead><tbody><tr><td><code title="rel-alternate"><a href="#rel-alternate">alternate</a></code></td> <!-- second most used <link rel> value -->
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Gives alternate representations of the current document.</td>
+    </tr><tr><td><code title="rel-author"><a href="#link-type-author">author</a></code></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Gives a link to the current document's author.</td>
+    </tr><tr><td><code title="rel-bookmark"><a href="#link-type-bookmark">bookmark</a></code></td> <!-- fourth most used <a rel> value -->
+     <td><em>not allowed</em></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Gives the permalink for the nearest ancestor section.</td>
+    </tr><!-- (commented out on the assumption that rel=contact is really XFN)
+    <tr>
+     <td><code title="rel-contact">contact</code></td> <!- 8th most used <a rel> value ->
+     <td><span>Hyperlink</span></td>
+     <td><span>Hyperlink</span></td>
+     <td>Gives a link to contact information for the current document.</td>
+    </tr>
+--><tr><td><code title="rel-external"><a href="#link-type-external">external</a></code></td> <!-- fifth and sixth most used <a rel> value (sixth is "external nofollow") -->
+     <td><em>not allowed</em></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Indicates that the referenced document is not part of the same site as the current document.</td>
+    </tr><tr><td><code title="rel-help"><a href="#link-type-help">help</a></code></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Provides a link to context-sensitive help.</td>
+    </tr><tr><td><code title="rel-icon"><a href="#rel-icon">icon</a></code></td> <!-- link rel="shortcut icon" and its ilk are the fourth, sixth, and ninth most used values -->
+     <td><a href="#external-resource-link" title="external resource link">External Resource</a></td>
+     <td><em>not allowed</em></td>
+     <td>Imports an icon to represent the current document.</td>
+    </tr><tr><td><code title="rel-license"><a href="#link-type-license">license</a></code></td> <!-- seventh most used <a rel> value -->
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Indicates that the main content of the current document is covered by the copyright license described by the referenced document.</td>
+    </tr><tr><td><code title="rel-next"><a href="#link-type-next">next</a></code></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Indicates that the current document is a part of a series, and that the next document in the series is the referenced document.</td>
+    </tr><tr><td><code title="rel-nofollow"><a href="#link-type-nofollow">nofollow</a></code></td> <!-- most used <a rel> value (and sixth most used is "external nofollow") -->
+     <td><em>not allowed</em></td>
+     <td><a href="#hyperlink-annotation" title="hyperlink annotation">Annotation</a></td>
+     <td>Indicates that the current document's original author or publisher does not endorse the referenced document.</td>
+    </tr><tr><td><code title="rel-noreferrer"><a href="#link-type-noreferrer">noreferrer</a></code></td>
+     <td><em>not allowed</em></td>
+     <td><a href="#hyperlink-annotation" title="hyperlink annotation">Annotation</a></td>
+     <td>Requires that the user agent not send an HTTP <code title="http-referer">Referer</code> (sic) header if the user follows the hyperlink.</td>
+    </tr><tr><td><code title="rel-pingback"><a href="#link-type-pingback">pingback</a></code></td>
+     <td><a href="#external-resource-link" title="external resource link">External Resource</a></td>
+     <td><em>not allowed</em></td>
+     <td>Gives the address of the pingback server that handles pingbacks to the current document.</td>
+    </tr><tr><td><code title="rel-prefetch"><a href="#link-type-prefetch">prefetch</a></code></td>
+     <td><a href="#external-resource-link" title="external resource link">External Resource</a></td>
+     <td><a href="#external-resource-link" title="external resource link">External Resource</a></td>
+     <td>Specifies that the target resource should be preemptively cached.</td>
+    </tr><tr><td><code title="rel-prev"><a href="#link-type-prev">prev</a></code></td> <!-- prev is used more than previous -->
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Indicates that the current document is a part of a series, and that the previous document in the series is the referenced document.</td>
+    </tr><tr><td><code title="rel-search"><a href="#link-type-search">search</a></code></td> <!-- used quite a bit -->
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Gives a link to a resource that can be used to search through the current document and its related pages.</td>
+    </tr><tr><td><code title="rel-sidebar"><a href="#link-type-sidebar">sidebar</a></code></td> <!-- used quite a bit -->
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Specifies that the referenced document, if retrieved, is intended to be shown in the browser's sidebar (if it has one).</td>
+    </tr><tr><td><code title="rel-stylesheet"><a href="#link-type-stylesheet">stylesheet</a></code></td> <!-- most commonly used <link rel> value, variants came in 7th, 8th, 12th, 17th... -->
+     <td><a href="#external-resource-link" title="external resource link">External Resource</a></td>
+     <td><em>not allowed</em></td>
+     <td>Imports a stylesheet.</td>
+    </tr><tr><td><code title="rel-tag"><a href="#link-type-tag">tag</a></code></td> <!-- second and third most used <a rel> value (third is technically "category tag"). -->
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td><a href="#hyperlink">Hyperlink</a></td>
+     <td>Gives a tag (identified by the given address) that applies to the current document.</td>
+    </tr></tbody></table>
+    </section>
+</body>
+</html>
