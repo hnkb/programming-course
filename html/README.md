@@ -198,3 +198,4 @@ Three are three types of HTML tags:
 
   - https://developers.whatwg.org/
   - https://developer.mozilla.org/en-US/docs/Web/HTML
+  - [Some interesting excerpts from HTML5 standard](excerpts.html)
